@@ -288,7 +288,7 @@ func New(config *Config) (*Ethereum, error) {
 	chainDb, err := newdb(filepath.Join(config.DataDir, "chaindata"))
 	if err != nil {
 		if errno, ok := err.(syscall.Errno); ok && datadirInUseErrnos[uint(errno)] {
-			err = fmt.Errorf("%v (check if another instance of geth is already running with the same data directory '%s')", err, config.DataDir)
+			err = fmt.Errorf("%v (check if another instance of gsoil is already running with the same data directory '%s')", err, config.DataDir)
 		}
 		return nil, fmt.Errorf("blockchain db err: %v", err)
 	}
@@ -305,7 +305,7 @@ func New(config *Config) (*Ethereum, error) {
 	dappDb, err := newdb(filepath.Join(config.DataDir, "dapp"))
 	if err != nil {
 		if errno, ok := err.(syscall.Errno); ok && datadirInUseErrnos[uint(errno)] {
-			err = fmt.Errorf("%v (check if another instance of geth is already running with the same data directory '%s')", err, config.DataDir)
+			err = fmt.Errorf("%v (check if another instance of gsoil is already running with the same data directory '%s')", err, config.DataDir)
 		}
 		return nil, fmt.Errorf("dapp db err: %v", err)
 	}
@@ -358,7 +358,7 @@ func New(config *Config) (*Ethereum, error) {
 		b, _ := chainDb.Get([]byte("BlockchainVersion"))
 		bcVersion := int(common.NewValue(b).Uint())
 		if bcVersion != config.BlockChainVersion && bcVersion != 0 {
-			return nil, fmt.Errorf("Blockchain DB version mismatch (%d / %d). Run geth upgradedb.\n", bcVersion, config.BlockChainVersion)
+			return nil, fmt.Errorf("Blockchain DB version mismatch (%d / %d). Run gsoil upgradedb.\n", bcVersion, config.BlockChainVersion)
 		}
 		saveBlockchainVersion(chainDb, config.BlockChainVersion)
 	}
@@ -511,7 +511,7 @@ func (s *Ethereum) Start() error {
 	err := s.net.Start()
 	if err != nil {
 		if portInUseErrRE.MatchString(err.Error()) {
-			err = fmt.Errorf("%v (possibly another instance of geth is using the same port)", err)
+			err = fmt.Errorf("%v (possibly another instance of gsoil is using the same port)", err)
 		}
 		return err
 	}

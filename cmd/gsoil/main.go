@@ -47,7 +47,7 @@ import (
 )
 
 const (
-	ClientIdentifier = "Geth"
+	ClientIdentifier = "Gsoil"
 	Version          = "1.3.3"
 	VersionMajor     = 1
 	VersionMinor     = 3
@@ -67,7 +67,7 @@ func init() {
 		nodeNameVersion = Version + "-" + gitCommit[:8]
 	}
 
-	app = utils.NewApp(Version, "the go-ethereum command line interface")
+	app = utils.NewApp(Version, "the SOIL command line interface")
 	app.Action = run
 	app.HideVersion = true // we have a command to print the version
 	app.Commands = []cli.Command{
@@ -267,27 +267,27 @@ nodes.
 		{
 			Action: console,
 			Name:   "console",
-			Usage:  `Geth Console: interactive JavaScript environment`,
+			Usage:  `Gsoil Console: interactive JavaScript environment`,
 			Description: `
-The Geth console is an interactive shell for the JavaScript runtime environment
+The Gsoil Console is an interactive shell for the JavaScript runtime environment
 which exposes a node admin interface as well as the Ðapp JavaScript API.
 See https://github.com/ethereum/go-ethereum/wiki/Javascipt-Console
 `},
 		{
 			Action: attach,
 			Name:   "attach",
-			Usage:  `Geth Console: interactive JavaScript environment (connect to node)`,
+			Usage:  `Gsoil Console: interactive JavaScript environment (connect to node)`,
 			Description: `
-The Geth console is an interactive shell for the JavaScript runtime environment
+The Gsoil Console is an interactive shell for the JavaScript runtime environment
 which exposes a node admin interface as well as the Ðapp JavaScript API.
 See https://github.com/ethereum/go-ethereum/wiki/Javascipt-Console.
-This command allows to open a console on a running geth node.
+This command allows to open a console on a running gsoil node.
 `,
 		},
 		{
 			Action: execJSFiles,
 			Name:   "js",
-			Usage:  `executes the given JavaScript files in the Geth JavaScript VM`,
+			Usage:  `executes the given JavaScript files in the Gsoil JavaScript VM`,
 			Description: `
 The JavaScript VM exposes a node admin interface as well as the Ðapp
 JavaScript API. See https://github.com/ethereum/go-ethereum/wiki/Javascipt-Console
@@ -431,7 +431,7 @@ func attach(ctx *cli.Context) {
 	}
 
 	if err != nil {
-		utils.Fatalf("Unable to attach to geth node - %v", err)
+		utils.Fatalf("Unable to attach to gsoil node - %v", err)
 	}
 
 	repl := newLightweightJSRE(
@@ -709,7 +709,7 @@ func accountImport(ctx *cli.Context) {
 func makedag(ctx *cli.Context) {
 	args := ctx.Args()
 	wrongArgs := func() {
-		utils.Fatalf(`Usage: geth makedag <block number> <outputdir>`)
+		utils.Fatalf(`Usage: gsoil makedag <block number> <outputdir>`)
 	}
 	switch {
 	case len(args) == 2:
@@ -742,7 +742,7 @@ func gpuinfo(ctx *cli.Context) {
 func gpubench(ctx *cli.Context) {
 	args := ctx.Args()
 	wrongArgs := func() {
-		utils.Fatalf(`Usage: geth gpubench <gpu number>`)
+		utils.Fatalf(`Usage: gsoil gpubench <gpu number>`)
 	}
 	switch {
 	case len(args) == 1:
