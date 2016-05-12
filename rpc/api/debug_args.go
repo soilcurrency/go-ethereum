@@ -22,7 +22,7 @@ import (
 	"math/big"
 	"reflect"
 
-	"github.com/ethereum/go-ethereum/rpc/shared"
+	"github.com/soilcurrency/go-ethereum/rpc/shared"
 )
 
 type WaitForBlockArgs struct {

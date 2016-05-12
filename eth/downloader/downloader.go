@@ -28,12 +28,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/logger"
-	"github.com/ethereum/go-ethereum/logger/glog"
+	"github.com/soilcurrency/go-ethereum/common"
+	"github.com/soilcurrency/go-ethereum/core/types"
+	"github.com/soilcurrency/go-ethereum/ethdb"
+	"github.com/soilcurrency/go-ethereum/event"
+	"github.com/soilcurrency/go-ethereum/logger"
+	"github.com/soilcurrency/go-ethereum/logger/glog"
 	"github.com/rcrowley/go-metrics"
 )
 

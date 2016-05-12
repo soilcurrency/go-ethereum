@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/soilcurrency/go-ethereum/core/types"
+	"github.com/soilcurrency/go-ethereum/crypto"
+	"github.com/soilcurrency/go-ethereum/ethdb"
+	"github.com/soilcurrency/go-ethereum/event"
+	"github.com/soilcurrency/go-ethereum/params"
 )
 
 func ExampleGenerateChain() {

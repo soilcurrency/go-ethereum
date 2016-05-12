@@ -21,9 +21,9 @@ package xeth
 import (
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/whisper"
+	"github.com/soilcurrency/go-ethereum/common"
+	"github.com/soilcurrency/go-ethereum/crypto"
+	"github.com/soilcurrency/go-ethereum/whisper"
 )
 
 // WhisperMessage is the external API representation of a whisper.Message.

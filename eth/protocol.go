@@ -21,9 +21,9 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/soilcurrency/go-ethereum/common"
+	"github.com/soilcurrency/go-ethereum/core/types"
+	"github.com/soilcurrency/go-ethereum/rlp"
 )
 
 // Constants to match up protocol versions and messages
@@ -43,7 +43,8 @@ var ProtocolVersions = []uint{eth63, eth62, eth61}
 var ProtocolLengths = []uint64{17, 8, 9}
 
 const (
-	NetworkId          = 1
+	NetworkId          = 42
+	//NetworkId          = 1
 	ProtocolMaxMsgSize = 10 * 1024 * 1024 // Maximum cap on the size of a protocol message
 )
 

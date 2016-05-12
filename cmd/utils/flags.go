@@ -31,25 +31,25 @@ import (
 
 	"github.com/codegangsta/cli"
 	"github.com/ethereum/ethash"
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/logger"
-	"github.com/ethereum/go-ethereum/logger/glog"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc/api"
-	"github.com/ethereum/go-ethereum/rpc/codec"
-	"github.com/ethereum/go-ethereum/rpc/comms"
-	"github.com/ethereum/go-ethereum/rpc/shared"
-	"github.com/ethereum/go-ethereum/rpc/useragent"
-	"github.com/ethereum/go-ethereum/xeth"
+	"github.com/soilcurrency/go-ethereum/accounts"
+	"github.com/soilcurrency/go-ethereum/common"
+	"github.com/soilcurrency/go-ethereum/core"
+	"github.com/soilcurrency/go-ethereum/core/vm"
+	"github.com/soilcurrency/go-ethereum/crypto"
+	"github.com/soilcurrency/go-ethereum/eth"
+	"github.com/soilcurrency/go-ethereum/ethdb"
+	"github.com/soilcurrency/go-ethereum/event"
+	"github.com/soilcurrency/go-ethereum/logger"
+	"github.com/soilcurrency/go-ethereum/logger/glog"
+	"github.com/soilcurrency/go-ethereum/metrics"
+	"github.com/soilcurrency/go-ethereum/p2p/nat"
+	"github.com/soilcurrency/go-ethereum/params"
+	"github.com/soilcurrency/go-ethereum/rpc/api"
+	"github.com/soilcurrency/go-ethereum/rpc/codec"
+	"github.com/soilcurrency/go-ethereum/rpc/comms"
+	"github.com/soilcurrency/go-ethereum/rpc/shared"
+	"github.com/soilcurrency/go-ethereum/rpc/useragent"
+	"github.com/soilcurrency/go-ethereum/xeth"
 )
 
 func init() {
@@ -268,7 +268,8 @@ var (
 	RPCPortFlag = cli.IntFlag{
 		Name:  "rpcport",
 		Usage: "HTTP-RPC server listening port",
-		Value: 8545,
+		//Value: 8545,
+		Value: 39421,
 	}
 	RPCCORSDomainFlag = cli.StringFlag{
 		Name:  "rpccorsdomain",
@@ -312,7 +313,8 @@ var (
 	ListenPortFlag = cli.IntFlag{
 		Name:  "port",
 		Usage: "Network listening port",
-		Value: 30303,
+		//Value: 30303,
+		Value: 39420,
 	}
 	BootnodesFlag = cli.StringFlag{
 		Name:  "bootnodes",
@@ -595,7 +597,7 @@ func IpcSocketPath(ctx *cli.Context) (ipcpath string) {
 	} else {
 		ipcpath = common.DefaultIpcPath()
 		if ctx.GlobalIsSet(DataDirFlag.Name) {
-			ipcpath = filepath.Join(ctx.GlobalString(DataDirFlag.Name), "geth.ipc")
+			ipcpath = filepath.Join(ctx.GlobalString(DataDirFlag.Name), "gsoil.ipc")
 		}
 		if ctx.GlobalIsSet(IPCPathFlag.Name) {
 			ipcpath = ctx.GlobalString(IPCPathFlag.Name)

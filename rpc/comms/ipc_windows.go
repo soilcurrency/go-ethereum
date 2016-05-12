@@ -28,9 +28,9 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/ethereum/go-ethereum/rpc/codec"
-	"github.com/ethereum/go-ethereum/rpc/shared"
-	"github.com/ethereum/go-ethereum/rpc/useragent"
+	"github.com/soilcurrency/go-ethereum/rpc/codec"
+	"github.com/soilcurrency/go-ethereum/rpc/shared"
+	"github.com/soilcurrency/go-ethereum/rpc/useragent"
 )
 
 var (

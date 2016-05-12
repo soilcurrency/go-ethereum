@@ -19,8 +19,8 @@ package shared
 import (
 	"encoding/json"
 
-	"github.com/ethereum/go-ethereum/logger"
-	"github.com/ethereum/go-ethereum/logger/glog"
+	"github.com/soilcurrency/go-ethereum/logger"
+	"github.com/soilcurrency/go-ethereum/logger/glog"
 )
 
 // Ethereum RPC API interface

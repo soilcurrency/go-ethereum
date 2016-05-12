@@ -23,7 +23,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/rpc/shared"
+	"github.com/soilcurrency/go-ethereum/rpc/shared"
 )
 
 func TestBlockheightInvalidString(t *testing.T) {
